@@ -1,6 +1,7 @@
 <?php
 include("db.php");
 include("create_tables.php");
+include("send_mail.php");
 
 $email = $_POST['email'];
 $name = $_POST['name'];
@@ -40,7 +41,12 @@ if ($name === "" or $name === " ") {
     }
 
     //send mail here
-
+    $res1 = send_mail($name,$email,"TechVerse Event Registration Confirmation","2nd May, 2023","12:30 PM","Room No. 514, MESCOE, Pune","TechVerse's Induction Program ");
+    if($res1){
+        $res['mail'] = 'sent';
+    }else{
+        $res['mail'] = 'fail';
+    }
     $res['type'] = 'res';
     $res['code'] = 'success';
     $res['desc'] = 'success';

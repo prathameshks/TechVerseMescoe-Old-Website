@@ -213,7 +213,11 @@
             if (result['type'] == 'res' && result['code'] == "success") {
                 document.getElementById('request').style.display = "none";
                 document.getElementById('message').style.display = "block";
-                document.getElementById('message_text').innerHTML = "Thank You! Your Form is Submitted Successfully,<br> Invitation has been send to "+result['email']+"<br>Note: Kindly Show the Mail to Attend the Event<br>For Queries Reach Out us on <a style='color:#508cea;' href='mailto:techverse.mescoe@gmail.com' >techverse.mescoe@gmail.com</a>";
+                if(result['mail'] == 'sent'){
+                    document.getElementById('message_text').innerHTML = "Thank You! Your Form is Submitted Successfully,<br> Invitation has been send to "+result['email']+"<br>Note: Kindly Show the Mail to Attend the Event<br>For Queries Reach Out us on <a style='color:#508cea;' href='mailto:techverse.mescoe@gmail.com' >techverse.mescoe@gmail.com</a>";
+                }else{
+                    document.getElementById('message_text').innerHTML = "Thank You! Your Form is Submitted Successfully.<br>But, We were <b>unable<b> to Send Invitation to "+result['email']+"<br>Kindly Reach Out us on <a style='color:#508cea;' href='mailto:techverse.mescoe@gmail.com' >techverse.mescoe@gmail.com</a>";
+                }
             } else if (result['type'] == 'error') {
                 // document.getElementById('request').style.display = "none";
                 document.getElementById('message').style.display = "block";
