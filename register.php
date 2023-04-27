@@ -55,19 +55,9 @@
                 <div class=" col-md-10 offset-md-1">
 
 
-                    <form class="main_form" style="color: #ffffff;">
+                    <form id="request" class="main_form" style="color: #ffffff;">
                         <fieldset>
 
-                            <!-- Text input-->
-                            <div class="">
-                                <label class="col-md-6 control-label" for="email">Email</label>
-                                <div class="col-md-6">
-                                    <!-- <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required=""> -->
-                                    <input id="email" class="contactus" placeholder="Please Enter Your Email ID" type="email" name="email" required>
-                                    
-                                </div>
-                            </div>
-                            
                             <!-- Text input-->
                             <div class="form-group">
                                 <label class="col-md-6 control-label" for="name">Name</label>
@@ -78,31 +68,41 @@
                                 </div>
                             </div>
 
+                            <!-- Text input-->
+                            <div class="">
+                                <label class="col-md-6 control-label" for="email">Email</label>
+                                <div class="col-md-6">
+                                    <!-- <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required=""> -->
+                                    <input id="email" class="contactus" placeholder="Please Enter Your Email ID" type="email" name="email" required>
+
+                                </div>
+                            </div>
+
                             <!-- Multiple Radios -->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="dept">Department</label>
                                 <div class="col-md-6">
                                     <div class=" form-check">
                                         <label for="dept_radios-0">
-                                            <input class="form-check-input" type="radio" name="dept" id="dept_radios-0" value="comp" checked="">
+                                            <input class="form-check-input" type="radio" name="dept" id="dept_radios-0" value="COMP" checked="">
                                             Computer Engineering
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label for="dept_radios-1">
-                                            <input type="radio" name="dept" id="dept_radios-1" value="entc">
+                                            <input type="radio" name="dept" id="dept_radios-1" value="ENTC">
                                             Electronics &amp; Telecommunication Engineering
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label for="dept_radios-2">
-                                            <input type="radio" name="dept" id="dept_radios-2" value="mech">
+                                            <input type="radio" name="dept" id="dept_radios-2" value="MECH">
                                             Mechanical Engineering
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label for="dept_radios-3">
-                                            <input type="radio" name="dept" id="dept_radios-3" value="airobo">
+                                            <input type="radio" name="dept" id="dept_radios-3" value="AIRobo">
                                             Automation and Robotics Engineering
                                         </label>
                                     </div>
@@ -115,7 +115,7 @@
                                 <div class="col-md-6">
                                     <div class="radio">
                                         <label for="year_radios-0">
-                                            <input type="radio" name="year" id="year_radios-0" value="fe" >
+                                            <input type="radio" name="year" id="year_radios-0" value="fe">
                                             FE
                                         </label>
                                     </div>
@@ -176,15 +176,17 @@
                             </div>
 
                             <!-- Button -->
-                                <div class="col-md-4">
-                                    <button type="submit" class="btn btn-primary">Submit Form</button>
-                                </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-primary">Submit Form</button>
+                            </div>
 
 
                         </fieldset>
                     </form>
 
-
+                    <div id="message" class="text_align_center" style="display: none;">
+                        <p id="message_text"></p>
+                    </div>
 
                 </div>
             </div>
@@ -203,6 +205,45 @@
     <!-- my js files  -->
     <script>
         document.getElementById("nav_register").classList.add("active");
+    </script>
+
+    <script>
+        function handle_form_response(result) {
+            // console.log(result);
+            if (result['type'] == 'res' && result['code'] == "success") {
+                document.getElementById('request').style.display = "none";
+                document.getElementById('message').style.display = "block";
+                document.getElementById('message_text').innerHTML = "Thank You! Your Form is Submitted Successfully,<br> Invitation has been send to "+result['email']+"<br>Note: Kindly Show the Mail to Attend the Event<br>For Queries Reach Out us on <a style='color:#508cea;' href='mailto:techverse.mescoe@gmail.com' >techverse.mescoe@gmail.com</a>";
+            } else if (result['type'] == 'error') {
+                // document.getElementById('request').style.display = "none";
+                document.getElementById('message').style.display = "block";
+                document.getElementById('message_text').innerHTML = "Please Enter a Valid "+result['code'];
+            }
+        }
+
+        document.querySelector('#request').addEventListener('submit', function(event) {
+            event.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "assets/php/register_user.php",
+                data: {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    dept: document.querySelector('input[name="dept"]:checked').value,
+                    year: document.querySelector('input[name="year"]:checked').value,
+                    division: document.querySelector('input[name="division"]:checked').value,
+                    prn: document.getElementById("prn").value
+                },
+                // data:formData,
+                success: function(response) {
+                    message = JSON.parse(response);
+                    // console.log(message);
+                    handle_form_response(message);
+                    // setcart();
+                    // handle_otp_send(message['email_verification'], message['otp_send']);
+                }
+            });
+        });
     </script>
 </body>
 

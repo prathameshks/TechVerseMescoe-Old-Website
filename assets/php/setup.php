@@ -28,6 +28,7 @@ mysqli_select_db($con, $databaseName);
 
 //Contact table
 contact_table($con);
+registration_table($con);
 
 // mysqli_query($con, "CREATE TABLE IF NOT EXISTS `food_items` (
 //     `id` int(11) NOT NULL AUTO_INCREMENT,
