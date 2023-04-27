@@ -42,6 +42,8 @@ if ($name === "" or $name === " ") {
     $res['type'] = 'res';
     $res['code'] = 'success';
     $res['desc'] = 'success';
+
+    
 }
 
 echo json_encode($res);
