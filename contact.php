@@ -112,7 +112,7 @@
                 // data:formData,
                 success: function(response) {
                     message = JSON.parse(response);
-                    console.log(message);
+                    // console.log(message);
                     handle_form_response(message);
                     // setcart();
                     // handle_otp_send(message['email_verification'], message['otp_send']);
