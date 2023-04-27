@@ -2,13 +2,26 @@
 File Name: responsive.css 
 ---------------------------------------------------------------------*/
 
-@media (min-width: 1200px) and (max-width: 1320px) {
+@media (min-width: 1200px) {
     #myCarousel a.carousel-control-prev {
         left: 43.3%;
     }
+    .nav_links {
+        display: block;
+    }
+    .nav_side_btn{
+        display: none;
+    }
+    
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+    .nav_links {
+        display: block;
+    }
+    .nav_side_btn{
+        display: none;
+    }
     .banner_main .bluid h1 {
         font-size: 44px;
         line-height: 57px;
@@ -44,6 +57,13 @@ File Name: responsive.css
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    .nav_links {
+        display: none;
+    }
+    .nav_side_btn{
+        display: block;
+    }
+
     ul.email li {
         padding: 0px 20px;
     }
@@ -107,6 +127,12 @@ File Name: responsive.css
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
+    .nav_links {
+        display: none;
+    }
+    .nav_side_btn{
+        display: block;
+    }
     header {
         padding: 21px 3px;
     }
@@ -119,10 +145,7 @@ File Name: responsive.css
     ul.email li {
         padding: 0px 15px;
     }
-    .logo {
-        text-align: center;
-        display: block;
-    }
+    
     .banner_main .bluid h1 {
         font-size: 51px;
         line-height: 67px;
@@ -161,6 +184,12 @@ File Name: responsive.css
 }
 
 @media (max-width: 575px) {
+    .nav_links {
+        display: none;
+    }
+    .nav_side_btn{
+        display: block;
+    }
     header {
         padding: 27px 0px;
     }
@@ -171,10 +200,7 @@ File Name: responsive.css
         padding-top: 0 !important;
         margin-top: -42px;
     }
-    .logo {
-        display: block;
-        float: left;
-    }
+    
     .banner_main .bluid h1 {
         font-size: 26px;
         line-height: 42px;

@@ -1,0 +1,24 @@
+.register_btn {
+     margin-right: 15px;
+     display: inline-block;
+     background: transparent;
+     color: #fff;
+     max-width: 225px;
+     height: auto;
+     /* line-height: 67px; */
+     width: 100%;
+     font-size: 18px;
+     text-align: center;
+     font-weight: 500;
+     transition: ease-in all 0.5s;
+     border: #ffffff solid 2px;
+     border-radius: 10px;
+}
+
+
+.register_btn:hover {
+     background: #face34;
+     color: #fff;
+     transition: ease-in all 0.5s;
+     border: #face34 solid 2px;
+}

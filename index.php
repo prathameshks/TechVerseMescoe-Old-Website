@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- mobile metas -->
+    <!-- mobile meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <!-- site metas -->
-    <title>bitcypo</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <!-- site meta -->
+    <title>Home | TechVerse MESCOE</title>
+    <link rel="shortcut icon" href="/icon/favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="techverse, techversemescoe,mescoe,college,club,pune,MESCOE, Pune, Techverse, student club, technical environment, technology, innovation, collaboration, skills, knowledge">
+    <meta name="description" content="Techverse is a student-led club at MESCOE in Pune that provides a dynamic technical environment for students to learn, collaborate and innovate. Our mission is to empower students with the skills and knowledge to excel in the ever-evolving tech industry.">
+    <meta name="author" content="techverse,MESCOE,Pune">
     <!-- bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mycss.css">
     <!-- responsive-->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- awesome fontfamily -->
@@ -27,54 +30,9 @@
 <!-- body -->
 
 <body class="main-layout">
-    <!-- loader  -->
-    <div class="loader_bg">
-        <div class="loader"><img src="images/loading.gif" alt="" /></div>
-    </div>
-    <!-- end loader -->
-    <div id="mySidepanel" class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a class="active" href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="searvices.html">Searvices</a>
-        <a href="testimonial.html">Testimonial</a>
-        <a href="works.html">Works</a>
-        <a href="contact.html">Contact</a>
-    </div>
-    <!-- header -->
-    <header>
-        <!-- header inner -->
-        <div class="head-top">
-            <div class="container-fluid">
-                <div class="row d_flex">
-                    <div class="col-sm-3">
-                        <div class="logo">
-                            <a href="index.html">BitCYPO</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <ul class="social_icon text_align_right d_none">
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-facebook-f"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-4">
-                        <ul class="email text_align_right">
-                            <li class="d_none"><a href="Javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                            <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></a> </li>
-                            <li>
-                                <button class="openbtn" onclick="openNav()"><img src="images/menu_btn.png"></button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- end header -->
+
+    <?php include("assets/header.html"); ?>
+
     <!-- start slider section -->
     <div id="top_section" class=" banner_main">
         <div class="container-fluid">
@@ -99,7 +57,8 @@
                                             <div class="col-md-6">
                                                 <div class="bluid">
                                                     <h1>Progress<br> Your Bitcoin Money Success</h1>
-                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                                                    <p>There are many variations of passages of Lorem Ipsum available,
+                                                        but the majority have suffered
                                                     </p>
                                                     <a class="read_more" href="Javascript:void(0)">Read More </a><a class="read_more" href="Javascript:void(0)">Get A Quote </a>
                                                 </div>
@@ -120,7 +79,8 @@
                                             <div class="col-md-6">
                                                 <div class="bluid">
                                                     <h1>Progress <br> Your Bitcoin Money Success</h1>
-                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                                                    <p>There are many variations of passages of Lorem Ipsum available,
+                                                        but the majority have suffered
                                                     </p>
                                                     <a class="read_more" href="Javascript:void(0)">Read More </a><a class="read_more" href="Javascript:void(0)">Get A Quote </a>
                                                 </div>
@@ -141,7 +101,8 @@
                                             <div class="col-md-6">
                                                 <div class="bluid">
                                                     <h1>Progress <br> Your Bitcoin Money Success</h1>
-                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                                                    <p>There are many variations of passages of Lorem Ipsum available,
+                                                        but the majority have suffered
                                                     </p>
                                                     <a class="read_more" href="Javascript:void(0)">Read More </a><a class="read_more" href="Javascript:void(0)">Get A Quote </a>
                                                 </div>
@@ -171,28 +132,28 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/wa1.svg" alt="#"/></i>
+                        <i><img src="images/wa1.svg" alt="#" /></i>
                         <h3>ONLINE WALLET</h3>
                         <p>It is a long established fact that a reader will be distracted by </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/wa2.svg" alt="#"/></i>
+                        <i><img src="images/wa2.svg" alt="#" /></i>
                         <h3>SEND COINS</h3>
                         <p>It is a long established fact that a reader will be distracted by </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/wa3.svg" alt="#"/></i>
+                        <i><img src="images/wa3.svg" alt="#" /></i>
                         <h3>MOBILE APP </h3>
                         <p>It is a long established fact that a reader will be distracted by </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/wa4.svg" alt="#"/></i>
+                        <i><img src="images/wa4.svg" alt="#" /></i>
                         <h3>COIN MINING</h3>
                         <p>It is a long established fact that a reader will be distracted by </p>
                     </div>
@@ -213,7 +174,10 @@
                                     <h2>About Us</h2>
                                 </div>
                                 <div class="about_text">
-                                    <p>It is a long established fact that a reader will be distracted bIt is a long established fact that a reader will be distracted by y It is a long established fact that a reader will be distracted by It is a long established fact that a reader will be distracted by </p>
+                                    <p>It is a long established fact that a reader will be distracted bIt is a long
+                                        established fact that a reader will be distracted by y It is a long established
+                                        fact that a reader will be distracted by It is a long established fact that a
+                                        reader will be distracted by </p>
                                     <a class="read_more" href="about.html">Read More</a>
                                 </div>
                             </div>
@@ -297,8 +261,10 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="growth text_align_center">
-                                            <h3>LiveTrades <span style="color: #face34;" class="pa_ri">USD 123456.09</span></h3>
-                                            <figure><img class="img_responsive" src="images/graf2.jpg" alt="#" /></figure>
+                                            <h3>LiveTrades <span style="color: #face34;" class="pa_ri">USD
+                                                    123456.09</span></h3>
+                                            <figure><img class="img_responsive" src="images/graf2.jpg" alt="#" />
+                                            </figure>
                                         </div>
                                     </div>
                                 </div>
@@ -349,8 +315,10 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="growth text_align_center">
-                                            <h3>LiveTrades <span style="color: #face34;" class="pa_ri">USD 123456.09</span></h3>
-                                            <figure><img class="img_responsive" src="images/graf2.jpg" alt="#" /></figure>
+                                            <h3>LiveTrades <span style="color: #face34;" class="pa_ri">USD
+                                                    123456.09</span></h3>
+                                            <figure><img class="img_responsive" src="images/graf2.jpg" alt="#" />
+                                            </figure>
                                         </div>
                                     </div>
                                 </div>
@@ -401,8 +369,10 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="growth text_align_center">
-                                            <h3>LiveTrades <span style="color: #face34;" class="pa_ri">USD 123456.09</span></h3>
-                                            <figure><img class="img_responsive" src="images/graf2.jpg" alt="#" /></figure>
+                                            <h3>LiveTrades <span style="color: #face34;" class="pa_ri">USD
+                                                    123456.09</span></h3>
+                                            <figure><img class="img_responsive" src="images/graf2.jpg" alt="#" />
+                                            </figure>
                                         </div>
                                     </div>
                                 </div>
@@ -453,8 +423,10 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="growth text_align_center">
-                                            <h3>LiveTrades <span style="color: #face34;" class="pa_ri">USD 123456.09</span></h3>
-                                            <figure><img class="img_responsive" src="images/graf2.jpg" alt="#" /></figure>
+                                            <h3>LiveTrades <span style="color: #face34;" class="pa_ri">USD
+                                                    123456.09</span></h3>
+                                            <figure><img class="img_responsive" src="images/graf2.jpg" alt="#" />
+                                            </figure>
                                         </div>
                                     </div>
                                 </div>
@@ -505,8 +477,10 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="growth text_align_center">
-                                            <h3>LiveTrades <span style="color: #face34;" class="pa_ri">USD 123456.09</span></h3>
-                                            <figure><img class="img_responsive" src="images/graf2.jpg" alt="#" /></figure>
+                                            <h3>LiveTrades <span style="color: #face34;" class="pa_ri">USD
+                                                    123456.09</span></h3>
+                                            <figure><img class="img_responsive" src="images/graf2.jpg" alt="#" />
+                                            </figure>
                                         </div>
                                     </div>
                                 </div>
@@ -546,7 +520,7 @@
                                                     <div class="row">
                                                         <div class="col-md-3">
                                                             <div class="testomoniam_text text_align_center">
-                                                                <i><img src="images/clint.jpg" alt="#"/></i>
+                                                                <i><img src="images/clint.jpg" alt="#" /></i>
                                                                 <h3>MorGan Den</h3>
                                                                 <span>Bitcoin</span>
                                                                 <img src="images/icon.png" alt="#" />
@@ -554,7 +528,14 @@
                                                         </div>
                                                         <div class="col-md-9">
                                                             <div class="testomoniam_text text_align_left">
-                                                                <p>more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and webmore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and webmore-or-less normal distribution of</p>
+                                                                <p>more-or-less normal distribution of letters, as
+                                                                    opposed to using 'Content here, content here',
+                                                                    making it look like readable English. Many desktop
+                                                                    publishing packages and webmore-or-less normal
+                                                                    distribution of letters, as opposed to using
+                                                                    'Content here, content here', making it look like
+                                                                    readable English. Many desktop publishing packages
+                                                                    and webmore-or-less normal distribution of</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -567,7 +548,7 @@
                                                     <div class="row">
                                                         <div class="col-md-3">
                                                             <div class="testomoniam_text text_align_center">
-                                                                <i><img src="images/clint.jpg" alt="#"/></i>
+                                                                <i><img src="images/clint.jpg" alt="#" /></i>
                                                                 <h3>MorGan Den</h3>
                                                                 <span>Bitcoin</span>
                                                                 <img src="images/icon.png" alt="#" />
@@ -575,7 +556,14 @@
                                                         </div>
                                                         <div class="col-md-9">
                                                             <div class="testomoniam_text text_align_left">
-                                                                <p>more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and webmore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and webmore-or-less normal distribution of</p>
+                                                                <p>more-or-less normal distribution of letters, as
+                                                                    opposed to using 'Content here, content here',
+                                                                    making it look like readable English. Many desktop
+                                                                    publishing packages and webmore-or-less normal
+                                                                    distribution of letters, as opposed to using
+                                                                    'Content here, content here', making it look like
+                                                                    readable English. Many desktop publishing packages
+                                                                    and webmore-or-less normal distribution of</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -588,7 +576,7 @@
                                                     <div class="row">
                                                         <div class="col-md-3">
                                                             <div class="testomoniam_text text_align_center">
-                                                                <i><img src="images/clint.jpg" alt="#"/></i>
+                                                                <i><img src="images/clint.jpg" alt="#" /></i>
                                                                 <h3>MorGan Den</h3>
                                                                 <span>Bitcoin</span>
                                                                 <img src="images/icon.png" alt="#" />
@@ -596,7 +584,14 @@
                                                         </div>
                                                         <div class="col-md-9">
                                                             <div class="testomoniam_text text_align_left">
-                                                                <p>more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and webmore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and webmore-or-less normal distribution of</p>
+                                                                <p>more-or-less normal distribution of letters, as
+                                                                    opposed to using 'Content here, content here',
+                                                                    making it look like readable English. Many desktop
+                                                                    publishing packages and webmore-or-less normal
+                                                                    distribution of letters, as opposed to using
+                                                                    'Content here, content here', making it look like
+                                                                    readable English. Many desktop publishing packages
+                                                                    and webmore-or-less normal distribution of</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -679,109 +674,19 @@
         </div>
     </div>
     <!-- end contact -->
-    <!-- footer -->
-    <footer>
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <a class="logo_bottom" href="index.html">BitCYPO</a>
-                    </div>
-                    <div class="col-md-3 col-sm-6" ">
-                  <div class="Informa conta ">
-                     <h3>Contact Us</h3>
-                     <ul>
-                        <li> <a href="Javascript:void(0) "> <i class="fa fa-map-marker " aria-hidden="true "></i> Location
-                           </a>
-                        </li>
-                        <li> <a href="Javascript:void(0) "><i class="fa fa-phone " aria-hidden="true "></i> Call +01 1234567890
-                           </a>
-                        </li>
-                        <li> <a href="Javascript:void(0) "> <i class="fa fa-envelope " aria-hidden="true "></i> demo@gmail.com
-                           </a>
-                        </li>
-                     </ul>
-                     <ul>
-                        <li>Readable content of                              
-                        </li>
-                        <li>a page when looking                           
-                        </li>
-                        <li>at its layoutreadable                          
-                        </li>
-                        <li>content of a page                             
-                        </li>
-                        <li>when looking at its                         
-                        </li>
-                        <li>layout                          
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-6 "">
-                        <div class="Informa helpful">
-                            <h3>Useful Link</h3>
-                            <ul>
-                                <li>Readable content of
-                                </li>
-                                <li>a page when looking
-                                </li>
-                                <li>at its layoutreadable
-                                </li>
-                                <li>content of a page
-                                </li>
-                                <li>when looking at its
-                                </li>
-                                <li>layout
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6" ">
-                  <div class="Informa ">
-                     <h3>Offices</h3>
-                     <ul>
-                        <li>Readable content of                              
-                        </li>
-                        <li>a page when looking                           
-                        </li>
-                        <li>at its layoutreadable                          
-                        </li>
-                        <li>content of a page                             
-                        </li>
-                        <li>when looking at its                         
-                        </li>
-                        <li>layout                          
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-6 ">
-                  <div class="Informa ">
-                     <h3>Newsletter</h3>
-                     <form class="newslatter_form ">
-                        <input class="ente " placeholder="Enter your email " type="text " name="Enter your email ">
-                        <button class="subs_btn ">Subscribe</button>
-                     </form>
-                  </div>
-               </div>
-            </div>
-            <div class="copyright text_align_center ">
-               <div class="container ">
-                  <div class="row ">
-                     <div class="col-md-12 ">
-                        <p>© 2020 All Rights Reserved. Design by   <a href="https://html.design/ "> Free Html Template</a></p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js "></script>
-      <script src="js/bootstrap.bundle.min.js "></script>
-      <script src="js/jquery-3.0.0.min.js "></script>
-      <script src="js/custom.js "></script>
-   </body>
+
+    <?php include("assets/footer.html"); ?>
+
+    <!-- Javascript files-->
+    <script src="js/jquery.min.js "></script>
+    <script src="js/bootstrap.bundle.min.js "></script>
+    <script src="js/jquery-3.0.0.min.js "></script>
+    <script src="js/custom.js "></script>
+
+    <!-- my js files  -->
+    <script>
+        document.getElementById("nav_home").classList.add("active");
+    </script>
+</body>
+
 </html>

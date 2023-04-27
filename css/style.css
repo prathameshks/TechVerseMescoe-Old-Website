@@ -257,7 +257,7 @@ header {
      background: #0f132d;
      width: 100%;
      padding: 22px 30px;
-     height: 96px;
+     height: max-content;
      z-index: 9;
 }
 
