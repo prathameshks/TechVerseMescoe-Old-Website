@@ -49,22 +49,25 @@
                     <form id="request" class="main_form">
                         <div class="row">
                             <div class="col-md-6 ">
-                                <input class="contactus" placeholder="Full Name" type="type" name="Full Name">
+                                <input id="name" class="contactus" placeholder="Full Name" type="text" name="name" required>
                             </div>
                             <div class="col-md-6">
-                                <input class="contactus" placeholder="Email" type="type" name="Email">
+                                <input id="email" class="contactus" placeholder="Email" type="email" name="email" required>
                             </div>
                             <div class="col-md-6">
-                                <input class="contactus" placeholder="Phone number" type="type" name="Phone number">
+                                <input id="ph_number" class="contactus" placeholder="Phone number" type="number" name="ph_number" required>
                             </div>
                             <div class="col-md-6">
-                                <textarea class="textarea" placeholder="Message" type="type" Message="Name"></textarea>
+                                <textarea id="msg" class="textarea" placeholder="Message" type="text" name="message" required></textarea>
                             </div>
                             <div class="col-md-12">
-                                <button class="send_btn">Send</button>
+                                <button type="submit" id="submit_contact_form" class="send_btn">Send</button>
                             </div>
                         </div>
                     </form>
+                    <div id="message" class="text_align_center" style="display: none;">
+                        <p id="message_text"></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,6 +83,42 @@
     <!-- my js files  -->
     <script>
         document.getElementById("nav_contact").classList.add("active");
+    </script>
+
+    <script>
+        function handle_form_response(result) {
+            if (result['type'] == 'res' && result['code'] == "success") {
+                document.getElementById('request').style.display = "none";
+                document.getElementById('message').style.display = "block";
+                document.getElementById('message_text').innerHTML = "Thank You Your Form is Submitted Successfully, We will Reach out to you Shortly";
+            } else if (result['type'] == 'error' && result['desc'] == "blank") {
+                // document.getElementById('request').style.display = "none";
+                document.getElementById('message').style.display = "block";
+                document.getElementById('message_text').innerHTML = "Please Enter a Valid "+result['code'];
+            }
+        }
+
+        document.querySelector('#request').addEventListener('submit', function(event) {
+            event.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "assets/php/submit_contact.php",
+                data: {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    ph_number: document.getElementById("ph_number").value,
+                    message: document.getElementById("msg").value
+                },
+                // data:formData,
+                success: function(response) {
+                    message = JSON.parse(response);
+                    console.log(message);
+                    handle_form_response(message);
+                    // setcart();
+                    // handle_otp_send(message['email_verification'], message['otp_send']);
+                }
+            });
+        });
     </script>
 </body>
 

@@ -28,11 +28,11 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-      <style>
-        .register_btn{
+    <style>
+        .register_btn {
             display: none;
         }
-      </style>
+    </style>
 </head>
 <!-- body -->
 
@@ -49,29 +49,143 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage text_align_center">
-                        <h2>Contact Us</h2>
+                        <h2>RSVP For Induction</h2>
                     </div>
                 </div>
                 <div class=" col-md-10 offset-md-1">
-                    <form id="request" class="main_form">
-                        <div class="row">
-                            <div class="col-md-6 ">
-                                <input class="contactus" placeholder="Full Name" type="type" name="Full Name">
+
+
+                    <form class="main_form" style="color: #ffffff;">
+                        <fieldset>
+
+                            <!-- Text input-->
+                            <div class="">
+                                <label class="col-md-6 control-label" for="email">Email</label>
+                                <div class="col-md-6">
+                                    <!-- <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required=""> -->
+                                    <input id="email" class="contactus" placeholder="Please Enter Your Email ID" type="email" name="email" required>
+                                    
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <input class="contactus" placeholder="Email" type="type" name="Email">
+                            
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-6 control-label" for="name">Name</label>
+                                <div class="col-md-6">
+                                    <!-- <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required=""> -->
+                                    <input id="name" class="contactus" placeholder="Please Enter Full Name" type="text" name="name" required>
+
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <input class="contactus" placeholder="Phone number" type="type" name="Phone number">
+
+                            <!-- Multiple Radios -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="dept">Department</label>
+                                <div class="col-md-6">
+                                    <div class=" form-check">
+                                        <label for="dept_radios-0">
+                                            <input class="form-check-input" type="radio" name="dept" id="dept_radios-0" value="comp" checked="">
+                                            Computer Engineering
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="dept_radios-1">
+                                            <input type="radio" name="dept" id="dept_radios-1" value="entc">
+                                            Electronics &amp; Telecommunication Engineering
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="dept_radios-2">
+                                            <input type="radio" name="dept" id="dept_radios-2" value="mech">
+                                            Mechanical Engineering
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="dept_radios-3">
+                                            <input type="radio" name="dept" id="dept_radios-3" value="airobo">
+                                            Automation and Robotics Engineering
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <textarea class="textarea" placeholder="Message" type="type" Message="Name"></textarea>
+
+                            <!-- Multiple Radios -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="year">Year</label>
+                                <div class="col-md-6">
+                                    <div class="radio">
+                                        <label for="year_radios-0">
+                                            <input type="radio" name="year" id="year_radios-0" value="fe" >
+                                            FE
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="year_radios-1">
+                                            <input type="radio" name="year" id="year_radios-1" value="se" checked="">
+                                            SE
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="year_radios-2">
+                                            <input type="radio" name="year" id="year_radios-2" value="te">
+                                            TE
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="year_radios-3">
+                                            <input type="radio" name="year" id="year_radios-3" value="be">
+                                            BE
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-12">
-                                <button class="send_btn">Send</button>
+
+                            <!-- Multiple Radios -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="division">Division</label>
+                                <div class="col-md-6">
+                                    <div class="radio">
+                                        <label for="division-0">
+                                            <input type="radio" name="division" id="division-0" value="1" checked="">
+                                            1 (A)
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="division-1">
+                                            <input type="radio" name="division" id="division-1" value="2">
+                                            2 (B)
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="division-2">
+                                            <input type="radio" name="division" id="division-2" value="3">
+                                            3 (SS)
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="prn">PRN</label>
+                                <div class="col-md-6">
+                                    <!-- <input id="prn" name="prn" type="text" placeholder="Please Enter Your PRN" class="form-control input-md" required=""> -->
+                                    <input id="prn" class="contactus" placeholder="Please Enter Your PRN" type="text" name="prn" required>
+
+                                </div>
+                            </div>
+
+                            <!-- Button -->
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                                </div>
+
+
+                        </fieldset>
                     </form>
+
+
+
                 </div>
             </div>
         </div>
