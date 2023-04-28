@@ -41,7 +41,7 @@ if ($name === "" or $name === " ") {
     }
 
     //send mail here
-    $res1 = send_mail($name,$email,"TechVerse Event Registration Confirmation","2nd May, 2023","12:30 PM","Room No. 514, MESCOE, Pune","TechVerse's Induction Program ");
+    $res1 = send_mail($name,$email,"TechVerse Event Registration Confirmation","2nd May, 2023","12:30 PM","Room No. 514, MESCOE, Pune","TechVerse's Induction Programme ");
     if($res1){
         $res['mail'] = 'sent';
     }else{

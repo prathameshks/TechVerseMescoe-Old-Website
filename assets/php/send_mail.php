@@ -39,7 +39,7 @@ function send_mail($name, $email, $subject, $date, $time, $venue,$event)
         $template = str_replace('%EVENT_VENUE%', $venue, $template);
         $template = str_replace('%EVENT_NAME%', $event, $template);
 
-        $invite_file = "https://raw.githubusercontent.com/TechVerseMescoe/public-content/main/TechVerse%20Invite.ics";
+        $invite_file = "../mail-t/TechVerse Invite.ics";
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
@@ -55,6 +55,7 @@ function send_mail($name, $email, $subject, $date, $time, $venue,$event)
             return false;
         }
     } catch (Exception $e) {
+        // echo $e;
         return false;
         // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
