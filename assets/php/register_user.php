@@ -11,6 +11,9 @@ $division = $_POST['division'];
 $prn = $_POST['prn'];
 
 $res = array();
+$get_mail = "SELECT COUNT(id) FROM `registered_users` WHERE `email` = '$email'";
+$result = mysqli_query($con,$get_mail);
+$mail_count =  mysqli_fetch_row($result)[0];
 
 if ($name === "" or $name === " ") {
     $res['type'] = 'error';
@@ -20,7 +23,11 @@ if ($name === "" or $name === " ") {
     $res['type'] = 'error';
     $res['code'] = 'E-mail';
     $res['desc'] = 'blank';
-} elseif ($prn === "" or $prn === " " or strlen($prn) != 9) {
+} elseif ($mail_count != '0') {
+    $res['type'] = 'error';
+    $res['code'] = 'email';
+    $res['desc'] = 'duplicate';
+}elseif ($prn === "" or $prn === " " or strlen($prn) != 9) {
     $res['type'] = 'error';
     $res['code'] = 'PRN';
     $res['desc'] = 'invalid';
@@ -41,7 +48,7 @@ if ($name === "" or $name === " ") {
     }
 
     //send mail here
-    $res1 = send_mail($name,$email,"TechVerse Event Registration Confirmation","2nd May, 2023","12:30 PM","Room No. 514, MESCOE, Pune","TechVerse's Induction Programme ");
+    $res1 = send_mail($name,$email,"TechVerse - Registration Confirmation","2nd May, 2023","12:30 PM","Room No. 514, MESCOE, Pune","TechVerse Induction Event");
     if($res1){
         $res['mail'] = 'sent';
     }else{

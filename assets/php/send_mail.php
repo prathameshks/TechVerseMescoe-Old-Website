@@ -63,7 +63,7 @@ function send_mail($name, $email, $subject, $date, $time, $venue,$event)
 
 
 
-// $res = send_mail('Prathamesh Sable','prathameshks2003@gmail.com', "This IS Subject","2nd May,2023","12:30 PM","Room No. 514, MESCOE, Pune","TechVerse's Induction Program");
-// echo $res;
+$res = send_mail('Prathamesh Sable','prathameshks2003@gmail.com', "This IS Subject","2nd May,2023","12:30 PM","Room No. 514, MESCOE, Pune","TechVerse's Induction Program");
+echo $res;
 
 // echo json_encode($responce);

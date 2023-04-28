@@ -771,15 +771,20 @@ ul.email li i {
 /** contact section **/
 
 .main_form .contactus {
-     border: #404b65 solid 1px;
+     border: #20202e solid 1px;
      padding: 0 15px;
      margin-bottom: 25px;
      width: 100%;
      height: 79px;
      background: transparent;
-     color: #5e687d;
+     color: #ffffff;
      font-size: 16px;
      font-weight: normal;
+}
+
+.option_trans{
+     background: white;
+     color: #000000;
 }
 
 .main_form .textarea {

@@ -10,7 +10,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
 
-    <title>Home | TechVerse MESCOE</title>
+    <title>Register | TechVerse MESCOE</title>
     <link rel="shortcut icon" href="/icon/favicon.ico" type="image/x-icon">
     <meta name="keywords" content="techverse, techversemescoe,mescoe,college,club,pune,MESCOE, Pune, Techverse, student club, technical environment, technology, innovation, collaboration, skills, knowledge">
     <meta name="description" content="Techverse is a student-led club at MESCOE in Pune that provides a dynamic technical environment for students to learn, collaborate and innovate. Our mission is to empower students with the skills and knowledge to excel in the ever-evolving tech industry.">
@@ -78,65 +78,29 @@
                                 </div>
                             </div>
 
-                            <!-- Multiple Radios -->
+                            <!-- Select Basic -->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="dept">Department</label>
-                                <div class="col-md-6">
-                                    <div class=" form-check">
-                                        <label for="dept_radios-0">
-                                            <input class="form-check-input" type="radio" name="dept" id="dept_radios-0" value="COMP" checked="">
-                                            Computer Engineering
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label for="dept_radios-1">
-                                            <input type="radio" name="dept" id="dept_radios-1" value="ENTC">
-                                            Electronics &amp; Telecommunication Engineering
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label for="dept_radios-2">
-                                            <input type="radio" name="dept" id="dept_radios-2" value="MECH">
-                                            Mechanical Engineering
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label for="dept_radios-3">
-                                            <input type="radio" name="dept" id="dept_radios-3" value="AIRobo">
-                                            Automation and Robotics Engineering
-                                        </label>
-                                    </div>
+                                <div class="col-md-4">
+                                    <select id="dept" name="dept" class="form-control contactus">
+                                        <option class="option_trans" value="COMP">Computer Engineering</option>
+                                        <option class="option_trans" value="ENTC">Electronics &amp; Telecommunication Engineering</option>
+                                        <option class="option_trans" value="MECH">Mechanical Engineering</option>
+                                        <option class="option_trans" value="AIRobo">Automation and Robotics Engineering</option>
+                                    </select>
                                 </div>
                             </div>
 
-                            <!-- Multiple Radios -->
-                            <div class="form-group">
+              <!-- Select Basic -->
+              <div class="form-group">
                                 <label class="col-md-4 control-label" for="year">Year</label>
-                                <div class="col-md-6">
-                                    <div class="radio">
-                                        <label for="year_radios-0">
-                                            <input type="radio" name="year" id="year_radios-0" value="fe">
-                                            FE
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label for="year_radios-1">
-                                            <input type="radio" name="year" id="year_radios-1" value="se" checked="">
-                                            SE
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label for="year_radios-2">
-                                            <input type="radio" name="year" id="year_radios-2" value="te">
-                                            TE
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label for="year_radios-3">
-                                            <input type="radio" name="year" id="year_radios-3" value="be">
-                                            BE
-                                        </label>
-                                    </div>
+                                <div class="col-md-4">
+                                    <select id="year" name="year" class="form-control contactus">
+                                        <option class="option_trans" value="FE">FE</option>
+                                        <option class="option_trans" value="SE">SE</option>
+                                        <option class="option_trans" value="TE">TE</option>
+                                        <option class="option_trans" value="BE">BE</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -209,19 +173,23 @@
 
     <script>
         function handle_form_response(result) {
-            // console.log(result);
+            console.log(result);
             if (result['type'] == 'res' && result['code'] == "success") {
                 document.getElementById('request').style.display = "none";
                 document.getElementById('message').style.display = "block";
-                if(result['mail'] == 'sent'){
-                    document.getElementById('message_text').innerHTML = "Thank You! Your Form is Submitted Successfully,<br> Invitation has been send to "+result['email']+"<br>Note: Kindly Show the Mail to Attend the Event<br>For Queries Reach Out us on <a style='color:#508cea;' href='mailto:techverse.mescoe@gmail.com' >techverse.mescoe@gmail.com</a>";
-                }else{
-                    document.getElementById('message_text').innerHTML = "Thank You! Your Form is Submitted Successfully.<br>But, We were <b>unable</b> to Send Invitation to "+result['email']+"<br>Kindly Reach Out us on <a style='color:#508cea;' href='mailto:techverse.mescoe@gmail.com' >techverse.mescoe@gmail.com</a>";
+                if (result['mail'] == 'sent') {
+                    document.getElementById('message_text').innerHTML = "Thank You! Your Form is Submitted Successfully,<br> Invitation has been send to " + result['email'] + "<br>Note: Kindly Show the Mail to Attend the Event<br>For Queries Reach Out us on <a style='color:#508cea;' href='mailto:techverse.mescoe@gmail.com' >techverse.mescoe@gmail.com</a>";
+                } else {
+                    document.getElementById('message_text').innerHTML = "Thank You! Your Form is Submitted Successfully.<br>But, We were <b>unable</b> to Send Invitation to " + result['email'] + "<br>Kindly Reach Out us on <a style='color:#508cea;' href='mailto:techverse.mescoe@gmail.com' >techverse.mescoe@gmail.com</a>";
                 }
+            } else if (result['type'] == 'error' && result['desc'] == 'duplicate') {
+                // document.getElementById('request').style.display = "none";
+                document.getElementById('message').style.display = "block";
+                document.getElementById('message_text').innerHTML = "The Email You Entered is Already Registered";
             } else if (result['type'] == 'error') {
                 // document.getElementById('request').style.display = "none";
                 document.getElementById('message').style.display = "block";
-                document.getElementById('message_text').innerHTML = "Please Enter a Valid "+result['code'];
+                document.getElementById('message_text').innerHTML = "Please Enter a Valid " + result['code'];
             }
         }
 
@@ -233,8 +201,8 @@
                 data: {
                     name: document.getElementById("name").value,
                     email: document.getElementById("email").value,
-                    dept: document.querySelector('input[name="dept"]:checked').value,
-                    year: document.querySelector('input[name="year"]:checked').value,
+                    dept: document.querySelector('#dept').value,
+                    year: document.querySelector('#year').value,
                     division: document.querySelector('input[name="division"]:checked').value,
                     prn: document.getElementById("prn").value
                 },
