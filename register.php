@@ -173,7 +173,7 @@
 
     <script>
         function handle_form_response(result) {
-            console.log(result);
+            // console.log(result);
             if (result['type'] == 'res' && result['code'] == "success") {
                 document.getElementById('request').style.display = "none";
                 document.getElementById('message').style.display = "block";
