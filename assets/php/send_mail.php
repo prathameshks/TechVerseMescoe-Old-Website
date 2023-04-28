@@ -39,12 +39,15 @@ function send_mail($name, $email, $subject, $date, $time, $venue,$event)
         $template = str_replace('%EVENT_VENUE%', $venue, $template);
         $template = str_replace('%EVENT_NAME%', $event, $template);
 
+        $invite_file = "https://raw.githubusercontent.com/TechVerseMescoe/public-content/main/TechVerse%20Invite.ics";
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = $subject;
         $mail->Body    = $template;
         $mail->AltBody    = $template;
+        $mail->addAttachment($invite_file,"Techverse-Invite.ics");
+
 
         if ($mail->send()) {
             return true;
