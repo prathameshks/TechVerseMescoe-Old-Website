@@ -32,6 +32,43 @@
         .register_btn {
             display: none;
         }
+
+        .ajax-loader {
+            visibility: hidden;
+            background-color: rgba(60, 60, 68, 0.8);
+            z-index: +100 !important;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ajax-loader img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .flip-vertical {
+            animation: flip-vertical 1.5s infinite;
+            transform-origin: center;
+        }
+
+        @keyframes flip-vertical {
+            0% {
+                transform: rotateY(0deg);
+            }
+            50% {
+                transform: rotateY(180deg);
+            }
+
+            100% {
+                transform: rotateY(0deg);
+            }
+        }
     </style>
 </head>
 <!-- body -->
@@ -91,8 +128,8 @@
                                 </div>
                             </div>
 
-              <!-- Select Basic -->
-              <div class="form-group">
+                            <!-- Select Basic -->
+                            <div class="form-group">
                                 <label class="col-md-4 control-label" for="year">Year</label>
                                 <div class="col-md-4">
                                     <select id="year" name="year" class="form-control contactus">
@@ -156,6 +193,13 @@
             </div>
         </div>
     </div>
+
+    <!-- loading screen  -->
+    <div class="ajax-loader">
+        <img src="/icon/logo.svg" class="img-responsive flip-vertical" />
+        
+    </div>
+
     <!-- footer -->
     <?php include("assets/footer.html"); ?>
 
@@ -195,7 +239,11 @@
 
         document.querySelector('#request').addEventListener('submit', function(event) {
             event.preventDefault();
+
             $.ajax({
+                beforeSend: function() {
+                    $('.ajax-loader').css("visibility", "visible");
+                },
                 type: "POST",
                 url: "assets/php/register_user.php",
                 data: {
@@ -213,6 +261,9 @@
                     handle_form_response(message);
                     // setcart();
                     // handle_otp_send(message['email_verification'], message['otp_send']);
+                },
+                complete: function() {
+                    $('.ajax-loader').css("visibility", "hidden");
                 }
             });
         });
